@@ -1,0 +1,8 @@
+<h1>Student List</h1>
+<ul id="students">
+  <li ng-repeat="student in students.all" data-id="{{student._id}}">
+    <strong>{{student.name}}</strong>
+    <em>{{student.location}}</em> <span class='status {{student.status | lowercase }}'>{{student.status | uppercase}}</span>
+    <button class='delete' ng-click="students.deleteStudent(student)">X</button>
+  </li>
+</ul>
