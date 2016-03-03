@@ -10,6 +10,78 @@
 'use strict';
 
 import _ from 'lodash';
+
+// var Student = require('./student.model');
+
+// // GET
+// function getAll(request, response) {
+//   Student.find(function(error, students) {
+//     if(error) response.json({message: 'Could not find any student'});
+
+//     response.json({students: students});
+//   }).select('-__v');
+// }
+
+// // POST
+// function createStudent(request, response) {
+//   var student = new Student(request.body);
+//   console.log('--------' + request.body);
+//   student.save();
+//   // student.save(function(error) {
+//   //   if(error) response.json({messsage: 'Could not ceate student b/c:' + error});
+
+//   //   response.json({student: student});
+//   // });
+// }
+
+// // GET
+// function getStudent(request, response) {
+//   var id = request.params.id;
+
+//   Student.findById({_id: id}, function(error, student) {
+//     if(error) response.json({message: 'Could not find student b/c:' + error});
+
+//     response.json({student: student});
+//   }).select('-__v');
+// }
+
+// function updateStudent(request, response) {
+//   var id = request.params.id;
+
+//   Student.findById({_id: id}, function(error, student) {
+//     if(error) response.json({message: 'Could not find student b/c:' + error});
+
+//     if(request.body.name) student.name = request.body.name;
+//     if(request.body.location) student.start = request.body.location;
+//     if(request.body.status) student.end = request.body.status;
+
+//     student.save(function(error) {
+//       if(error) response.json({messsage: 'Could not update student b/c:' + error});
+
+//       response.json({message: 'student successfully updated', student: student});
+//     });
+//   }).select('-__v');
+// }
+
+// function removeStudent(request, response) {
+//   var id = request.params.id;
+
+//   Student.remove({_id: id}, function(error) {
+//     if(error) response.json({message: 'Could not delete student b/c:' + error});
+
+//     response.json({message: 'Student successfully deleted'});
+//   }).select('-__v');
+// }
+
+// module.exports = {
+//   getAll: getAll,
+//   createStudent: createStudent,
+//   getStudent: getStudent,
+//   updateStudent: updateStudent,
+//   removeStudent: removeStudent
+// }
+
+
 import Student from './student.model';
 //import Channel from '../channel/channel.model';
 
@@ -77,9 +149,6 @@ export function show(req, res) {
 
 // Creates a new Student in the DB
 export function create(req, res) {
-  if (!req.user) {
-    return res.status(404).send('It looks like you aren\'t logged in, please try again.');
-  }
   Student.createAsync(req.body)
     .then(respondWithResult(res, 201))
     .catch(handleError(res));
