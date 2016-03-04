@@ -11,12 +11,12 @@ angular.module('medoApp')
       })
       .state('logout', {
         url: '/logout?referrer',
-        referrer: 'main',
+        referrer: '/',
         template: '',
         controller: function($state, Auth) {
           var referrer = $state.params.referrer ||
                           $state.current.referrer ||
-                          'main';
+                          '/';
           Auth.logout();
           $state.go(referrer);
         }
