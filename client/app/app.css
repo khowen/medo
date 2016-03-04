@@ -7282,6 +7282,9 @@ button.close {
   margin: 5% auto;
   text-align: center; }
 
+.loggedIn {
+  background-color: #fff; }
+
 .trash {
   color: #d15b47; }
 
@@ -7298,6 +7301,14 @@ button.close {
     display: flex;
     align-items: center;
     text-decoration: none; }
+
+body {
+  background: #673AB7;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to left, #673AB7, #512DA8);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to left, #673AB7, #512DA8);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */ }
 
 .thing-form {
   margin: 20px 0; }
@@ -7322,11 +7333,14 @@ button.close {
 .navbar-text {
   margin-left: 15px; }
 
+.inner-container {
+  width: 50%;
+  margin: 0 auto; }
+
 footer.footer {
   text-align: center;
   padding: 30px 0;
-  margin-top: 70px;
-  border-top: 1px solid #E5E5E5; }
+  margin-top: 70px; }
 
 .modal-primary .modal-header,
 .modal-info .modal-header,

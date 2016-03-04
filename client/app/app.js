@@ -47,6 +47,12 @@ function MainRouter($stateProvider, $urlRouterProvider){
         // controller: 'MainController',
         // controllerAs: 'main'
       })
+      .state('edit', {
+        url: '/students/edit',
+        templateUrl: 'app/main/edit.html'
+        // controller: 'MainController',
+        // controllerAs: 'main'
+      })
       .state('about', {
         url: '/about',
         templateUrl: 'app/main/about.html'

@@ -1,9 +1,14 @@
-<div class="container" ng-show="nav.isLoggedIn()">
+<div class="container text-center" ng-show="nav.isLoggedIn()">
   <div class="row">
     <h1 class="text-center">{{students.date | date : fullDate}} Schedule</h1>
-    <ul id="todayStudents"  ng-repeat="student in students.all" data-id="{{student._id}}">
-      <li>Name: {{student.studentName}}</li>
-      <li>Time: {{student.lessonTime}}</li>
-      <li>Address: {{student.address}}</li>
+    <ul class="list-group" id="todayStudents" data-id="{{student._id}}">
+      <li ng-repeat="student in students.all"  class="list-group-item">
+        <h4>Name: {{student.studentName}}</h4>
+        <h4>Time: {{student.lessonTime}}</h4>
+        <h4>Address: {{student.address}}</h4>
+      </li>
+   <!--    <li class="list-group-item">Time: {{student.lessonTime}}</li>
+      <li class="list-group-item">Address: {{student.address}}</li> -->
+    </ul>
   </div>
 </div>

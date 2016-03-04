@@ -10,6 +10,7 @@ function MainController($http){
   vm.addStudent = addStudent;
   vm.newStudent = {};
   vm.getStudents = getStudents;
+  vm.editStudent = editStudent;
   vm.deleteStudent = deleteStudent;
 
   console.log(vm.date);
@@ -33,6 +34,15 @@ function MainController($http){
         getStudents();
     });
     vm.newStudent = {};
+  }
+
+  function editStudent(student){
+    $http
+      .put('api/students/' + student._id)
+      .then(function(response){
+        var index = vm.all.indexOf(student);
+        vm.all.splice(index, 1);
+      });
   }
 
   function deleteStudent(student){
