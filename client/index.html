@@ -36,13 +36,13 @@
         <img src="assets/images/yeoman.png" alt="I'm Yeoman">
       </div>
     </header>
-     <div ng-show="nav.isLoggedIn()" class="col-lg-12">
+     <div class="container" ng-show="nav.isLoggedIn()" class="col-lg-12">
       <!-- <h1 class="page-header">Welcome {{user.email}}</h1> -->
       <a ui-sref="index">All Students</a>
       <a ui-sref="new">New Student</a>
       <a ui-sref="about">About</a>
     </div>
-    <section ng-controller='MainController as students' ui-view>
+    <section class="container" ng-controller='MainController as students' ui-view>
     </section>
     <footer></footer>
 

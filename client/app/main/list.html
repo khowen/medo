@@ -1,8 +1,63 @@
 <h1>Student List</h1>
-<ul id="students"  ng-repeat="student in students.all" data-id="{{student._id}}">
-  <li>
-    <strong>{{student.name}}</strong>
-    <em>{{student.location}}</em> <span class='status {{student.status | lowercase }}'>{{student.status | uppercase}}</span>
-    <button class='delete' ng-click="students.deleteStudent(student)">X</button>
-  </li>
-</ul>
+<table class="table table-hover">
+  <thead class="thead-inverse">
+    <tr>
+     <th>
+       <a href="#" ng-click="sortType = 'student'; sortReverse = !sortReverse">
+          Student Name
+          <span ng-show="sortType == 'student' && !sortReverse" class="fa fa-caret-down"></span>
+          <span ng-show="sortType == 'student' && sortReverse" class="fa fa-caret-up"></span>
+        </a>
+      </th>
+      <th>
+       <a href="#" ng-click="sortType = 'parent'; sortReverse = !sortReverse">
+          Parent Name
+          <span ng-show="sortType == 'parent' && !sortReverse" class="fa fa-caret-down"></span>
+          <span ng-show="sortType == 'parent' && sortReverse" class="fa fa-caret-up"></span>
+        </a>
+      </th>
+      <th>
+       <a href="#" ng-click="sortType = 'phone'; sortReverse = !sortReverse">
+          Phone Number
+          <span ng-show="sortType == 'phone' && !sortReverse" class="fa fa-caret-down"></span>
+          <span ng-show="sortType == 'phone' && sortReverse" class="fa fa-caret-up"></span>
+        </a>
+      </th>
+       <th>
+       <a href="#" ng-click="sortType = 'email'; sortReverse = !sortReverse">
+          Email
+          <span ng-show="sortType == 'email' && !sortReverse" class="fa fa-caret-down"></span>
+          <span ng-show="sortType == 'email' && sortReverse" class="fa fa-caret-up"></span>
+        </a>
+      </th>
+       <th>
+       <a href="#" ng-click="sortType = 'day'; sortReverse = !sortReverse">
+          Lesson Day
+          <span ng-show="sortType == 'day' && !sortReverse" class="fa fa-caret-down"></span>
+          <span ng-show="sortType == 'day' && sortReverse" class="fa fa-caret-up"></span>
+        </a>
+      </th>
+       <th>
+       <a href="#" ng-click="sortType = 'time'; sortReverse = !sortReverse">
+          Lesson Time
+          <span ng-show="sortType == 'time' && !sortReverse" class="fa fa-caret-down"></span>
+          <span ng-show="sortType == 'time' && sortReverse" class="fa fa-caret-up"></span>
+        </a>
+      </th>
+      <th>Edit</th>
+      <th>Delete</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr id="students"  ng-repeat="student in students.all | orderBy:sortType:sortReverse" data-id="{{student._id}}">
+      <td>{{student.studentName}}</td>
+      <td>{{student.email}}</td>
+      <td>{{student.phoneNumber}}</td>
+      <td>{{student.parentName}}</td>
+      <td>{{student.lessonDay}}</td>
+      <td>{{student.lessonTime}}</td>
+      <td>Edit</td>
+      <td><button class='delete' ng-click="students.deleteStudent(student)">X</button></td>
+    </tr>
+  </tbody>
+</table>

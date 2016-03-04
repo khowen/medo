@@ -1,24 +1,36 @@
 <h1>Create a new student:</h1>
   <form ng-submit="students.addStudent()" id="newStudent">
     <div>
-      <label for="newStudent-name">Name:</label>
-      <input type="text" id="newStudent-name" ng-model="students.newStudent.name" placeholder="Name">
+      <label for="newStudent-studentName">Student Name:</label>
+      <input type="text" id="newStudent-studentName" ng-model="students.newStudent.studentName" placeholder="Student Name">
     </div>
     <div>
-      <label for="newStudent-location">Location:</label>
-      <input type="text" id="newStudent-location" ng-model="students.newStudent.location" placeholder="address of lesson">
+      <label for="newStudent-parentName">Parent Name:</label>
+      <input type="text" id="newStudent-parentName" ng-model="students.newStudent.parentName" placeholder="Parent Name">
     </div>
     <div>
-      <label for="newStudent-status">Status:</label>
-      <select id="newStudent-status" ng-model='students.newStudent.status'>
-        <option value="" disabled>- - Please Select One - -</option>
-        <option value="Alive">Alive</option>
-        <option value="Dead">Dead</option>
-        <option value="Unknown" selected>Unknown</option>
-      </select>
+      <label for="newStudent-address">Address:</label>
+      <input type="text" id="newStudent-address" ng-model="students.newStudent.address" placeholder="Address">
+    </div>
+    <div>
+      <label for="newStudent-email">Email:</label>
+      <input type="text" id="newStudent-email" ng-model="students.newStudent.email" placeholder="Email">
+    </div>
+    <div>
+      <label for="newStudent-phoneNumber">Phone Number:</label>
+      <input type="text" id="newStudent-phoneNumber" ng-model="students.newStudent.phoneNumber" placeholder="Phone Number">
+    </div>
+    <div>
+      <label for="newStudent-lessonDay">Lesson Day:</label>
+      <input type="text" id="newStudent-lessonDay" ng-model="students.newStudent.lessonDay" placeholder="Lesson Day">
+    </div>
+    <div>
+      <label for="newStudent-lessonTime">Lesson Time:</label>
+      <input type="text" id="newStudent-lessonTime" ng-model="students.newStudent.lessonTime" placeholder="Lesson Time">
     </div>
     <div>
       <input type="submit" value="Add Student">
     </div>
   </form>
+
 
