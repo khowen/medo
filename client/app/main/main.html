@@ -1,5 +1,9 @@
-<div class="container">
+<div class="container" ng-show="nav.isLoggedIn()">
   <div class="row">
-    <h1 ng-show="nav.isLoggedIn()">This is the home/default view.</h1>
+    <h1 class="text-center">{{students.date | date : fullDate}} Schedule</h1>
+    <ul id="todayStudents"  ng-repeat="student in students.all" data-id="{{student._id}}">
+      <li>Name: {{student.studentName}}</li>
+      <li>Time: {{student.lessonTime}}</li>
+      <li>Address: {{student.address}}</li>
   </div>
 </div>

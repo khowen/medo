@@ -14,6 +14,12 @@ $fa-font-path: "../bower_components/font-awesome/fonts";
   padding: 0.2em 0;
 }
 
+.btnWrapper {
+  width: 40%;
+  margin: 5% auto;
+  text-align: center;
+}
+
 // Component styles are injected through grunt
 // injector
 @import 'admin/admin';

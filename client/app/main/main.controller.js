@@ -6,10 +6,13 @@ MainController.$inject = ['$http'];
 function MainController($http){
   var vm = this;
   vm.all = [];
+  vm.date = new Date();
   vm.addStudent = addStudent;
   vm.newStudent = {};
   vm.getStudents = getStudents;
   vm.deleteStudent = deleteStudent;
+
+  console.log(vm.date);
 
 
   function getStudents(){

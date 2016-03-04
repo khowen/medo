@@ -31,16 +31,20 @@
     <navbar></navbar>
     <header class="hero-unit" id="banner">
       <div class="container">
-        <h1>Medo</h1>
-        <p class="lead">A really awesome slogan.</p>
+        <h1>medo</h1>
+        <p class="lead">All your studios together at last.</p>
         <img src="assets/images/yeoman.png" alt="I'm Yeoman">
       </div>
     </header>
      <div class="container" ng-show="nav.isLoggedIn()" class="col-lg-12">
       <!-- <h1 class="page-header">Welcome {{user.email}}</h1> -->
-      <a ui-sref="index">All Students</a>
-      <a ui-sref="new">New Student</a>
-      <a ui-sref="about">About</a>
+      <div class="btnWrapper">
+        <a ui-sref="index" class="btn btn-primary">All Students</a>
+        <a ui-sref="new" class="btn btn-primary">New Student</a>
+      </div>
+
+
+
     </div>
     <section class="container" ng-controller='MainController as students' ui-view>
     </section>
